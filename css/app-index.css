@@ -151,6 +151,15 @@
     color: #2095f2;
 }
 
+.cancel-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: #666;
+}
+
 .doned-input {
     width: 90%;
     border: none;
@@ -167,6 +176,7 @@
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+
 .spinner {
     width: 60px;
     height: 60px;
@@ -214,9 +224,11 @@
         -webkit-transform: scale(1.0);
     }
 }
-.loading{
+
+.loading {
     text-align: center;
 }
-.loading span{
+
+.loading span {
     color: #666;
 }
