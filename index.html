@@ -83,8 +83,10 @@
             },
             add:function(){
                 this.$data.showModal = false;
+                var imgs = ['img/test1.jpg','img/test2.jpg','img/test3.jpg'];
+                var cc = Math.round(Math.random() * 2);
                 if(this.$data.itemname!=''){
-                    this.$data.lists.push({'title':this.$data.itemname,'img':'img/test3.jpg','color':'rgba(173, 171, 163, 0.7)'});
+                    this.$data.lists.push({'title':this.$data.itemname,'img':imgs[cc],'color':'rgba(173, 171, 163, 0.7)'});
                     this.$data.itemname ="";
                 }
             },
