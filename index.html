@@ -61,17 +61,17 @@
         data: function() {
             return {
                 lists: [{
-                    'id':0,
+                    'id':1,
                     'title': '一食堂',
                     'img': 'img/test1.jpg',
                     'color': 'rgba(61, 61, 62, 0.7)'
                 }, {
-                    'id':1,
+                    'id':2,
                     'title': '二食堂',
                     'img': 'img/test2.jpg',
                     'color': 'rgba(189, 151, 140, 0.7)'
                 }, {
-                    'id':2,
+                    'id':3,
                     'title': '三食堂',
                     'img': 'img/test3.jpg',
                     'color': 'rgba(173, 171, 163, 0.7)'
@@ -94,7 +94,7 @@
                 var imgs = ['img/test1.jpg','img/test2.jpg','img/test3.jpg'];
                 var cc = Math.round(Math.random() * 2);
                 if(this.$data.itemname!=''){
-                    this.$data.lists.push({'id':this.$data.lists.length,'title':this.$data.itemname,'img':imgs[cc],'color':'rgba(173, 171, 163, 0.7)'});
+                    this.$data.lists.push({'id':this.$data.lists.length+1,'title':this.$data.itemname,'img':imgs[cc],'color':'rgba(173, 171, 163, 0.7)'});
                     this.$data.itemname ="";
                 }
             },
@@ -113,7 +113,11 @@
                 this.$data.showDelModal = false;
             },
             delIt:function(id){
-                this.$data.lists.splice(id,1);
+                for(var i=0;i<this.$data.lists.length;i++){
+                    if(this.$data.lists[i].id == id){
+                        this.$data.lists.splice(i,1);
+                    }
+                }
                 this.$data.showAddModal = false;
                 this.$data.showDelModal = false;
             }
