@@ -30,8 +30,8 @@
     var Index = Vue.extend({
 
         data: function() {
-            imgs = ['img/test3.jpg', 'img/test2.jpg', 'img/test1.jpg']
-            var cc = Math.round(Math.random() * 2);
+            imgs = ['img/test3.jpg', 'img/test2.jpg', 'img/test1.jpg','img/test4.jpg','img/test5.jpg','img/test6.jpg','img/test7.jpg','img/test8.jpg','img/test9.jpg','img/test10.jpg','img/test11.jpg','img/test12.jpg'];
+            var cc = Math.round(Math.random() * imgs.length-1);
             return {
                 Index: {
                     bgimg: imgs[cc],
@@ -86,8 +86,8 @@
             },
             add:function(){
                 this.$data.showAddModal = false;
-                var imgs = ['img/test1.jpg','img/test2.jpg','img/test3.jpg'];
-                var cc = Math.round(Math.random() * 2);
+                var imgs = ['img/test3.jpg', 'img/test2.jpg', 'img/test1.jpg','img/test4.jpg','img/test5.jpg','img/test6.jpg','img/test7.jpg','img/test8.jpg','img/test9.jpg','img/test10.jpg','img/test11.jpg','img/test12.jpg'];
+                var cc = Math.round(Math.random() * imgs.length-1);
                 if(this.$data.itemname!=''){
                     this.$data.lists.push({'id':this.$data.lists.length+1,'title':this.$data.itemname,'img':imgs[cc],'color':'rgba(173, 171, 163, 0.7)'});
                     this.$data.itemname ="";
