@@ -200,7 +200,13 @@
         methods: {
             goBack: function(e) {
                 history.go(-1);
+            },
+            reAsi:function(){
+                var lists = JSON.parse(localStorage.lists);
+                var cc = Math.round(Math.random() * (lists.length-1));
+                this.$data.item = lists[cc];
             }
+
         },
         template: '<header class="header mui-bar mui-bar-nav"><a  v-on="click: goBack" class="mui-icon mui-icon-left-nav mui-pull-left"></a><h1 id="title" class="mui-title">{{siteInfo.sitename}}</h1></header>' +
             '<div class="mui-content asi-page">' +
@@ -215,6 +221,7 @@
                     '<div class="asi-card"  style="background-image: url({{item.img}});">' +
                     '<div class="asi-card-title" style="background-color:{{item.color}}"><span>{{item.title}}</span></div>' +
                     '</div>' +
+                    '<div class="re-asi-btn" v-touch="tap:reAsi"><span>不对不对，再选一次！</span></div>'+
                 '</div>' +
             '</div>'
 

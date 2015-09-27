@@ -98,7 +98,7 @@
 }
 
 .add-box span {
-    font-size: 50px;
+    font-size: 30px;
     color: #fff;
     line-height: 70px;
 }
@@ -235,4 +235,15 @@
 
 .loading span {
     color: #666;
+}
+
+.re-asi-btn {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding: 15px;
+    background-color: #4AA6FF;
+    color: #fff;
+    text-align: center;
+    display: block;
 }
