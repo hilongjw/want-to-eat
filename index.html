@@ -59,10 +59,13 @@
     var List = Vue.extend({
 
         data: function() {
-            var lists = {};
+            var lists = [];
+            var listState = false;
             if(localStorage.lists){
-                lists = JSON.parse(localStorage.lists);
-                listState = true;
+                if(JSON.parse(localStorage.lists).length != 0){
+                    lists = JSON.parse(localStorage.lists);
+                    listState = true;
+                }
             }
             
             return {
