@@ -90,17 +90,17 @@
     position: fixed;
     bottom: 10px;
     right: 10px;
-    height: 70px;
-    width: 70px;
+    height: 5rem;
+    width: 5rem;
     border-radius: 100%;
     text-align: center;
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.34);
 }
 
 .add-box span {
-    font-size: 30px;
+    font-size: 2.2rem;
     color: #fff;
-    line-height: 70px;
+    line-height: 5rem;
 }
 
 .modal-mask {
