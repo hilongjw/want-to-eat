@@ -48,6 +48,10 @@
     float: left;
 }
 
+.eating-null {
+    opacity: 0.4;
+}
+
 .eating-card-title {
     color: #FFFFFF;
     position: absolute;

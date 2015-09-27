@@ -59,29 +59,21 @@
     var List = Vue.extend({
 
         data: function() {
+            var lists = {};
+            if(localStorage.lists){
+                lists = JSON.parse(localStorage.lists);
+                listState = true;
+            }
+            
             return {
-                lists: [{
-                    'id':1,
-                    'title': '一食堂',
-                    'img': 'img/test1.jpg',
-                    'color': 'rgba(61, 61, 62, 0.7)'
-                }, {
-                    'id':2,
-                    'title': '二食堂',
-                    'img': 'img/test2.jpg',
-                    'color': 'rgba(189, 151, 140, 0.7)'
-                }, {
-                    'id':3,
-                    'title': '三食堂',
-                    'img': 'img/test3.jpg',
-                    'color': 'rgba(173, 171, 163, 0.7)'
-                }],
+                lists: lists,
                 siteInfo: {
                     sitename: "去吃啥？"
                 },
                 itemname:"",
                 showAddModal: false,
                 showDelModal: false,
+                listState:listState,
                 tmpid:""
             }
         },
@@ -96,6 +88,7 @@
                 if(this.$data.itemname!=''){
                     this.$data.lists.push({'id':this.$data.lists.length+1,'title':this.$data.itemname,'img':imgs[cc],'color':'rgba(173, 171, 163, 0.7)'});
                     this.$data.itemname ="";
+                    this.$data.listState = true;
                 }
             },
             goAsi:function(){
@@ -117,6 +110,9 @@
                     if(this.$data.lists[i].id == id){
                         this.$data.lists.splice(i,1);
                     }
+                }
+                if(this.$data.lists.length==0){
+                    this.$data.listState =false;
                 }
                 this.$data.showAddModal = false;
                 this.$data.showDelModal = false;
@@ -156,6 +152,9 @@
             '<div class="mui-content">' +
             '<div class="eating-box">' +
             '<ul>' +
+            '<li class="eating-card eating-null" v-if="!listState" v-touch="tap: showAddModal = true" >' +
+                '<div class="eating-card-title" ><span>添加你的选择</span></div>' +
+            '</li>' +
             '<li class="eating-card" v-touch="tap:openDelIt(item.id)" v-repeat="item in lists" style="background-image: url({{item.img}});">' +
             '<div class="eating-card-title" style="background-color:{{item.color}}"><span>{{item.title}}</span></div>' +
             '</li>' +
